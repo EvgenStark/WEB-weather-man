@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Погода в {{ town }}</title>
+{% endblock %}
+
+{% block content %}
+<main class="container">
+    <div class="bg-light p-5 rounded">
+        <div class="container">
+            <form method="post" style="margin-top: 30px; margin: center" class="d-flex">
+                <div style="display: inline-block; float: left; width: 700px; margin-left: auto">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                           name="search">
+                </div>
+                <div style="float: left; width: 350px;">
+                    <button class="btn btn-outline-success" type="submit"
+                            style="width: 200px; background-color: #353535; color: white">
+                        Поиск
+                    </button>
+                </div>
+            </form>
+            <form style="margin-left: 126px; margin-right: 150px; margin-top: 20px; border-radius: 10px;">
+                <div class="alert alert-secondary"
+                     style="margin:0 auto; margin-bottom: 15px; margin-top: 15px; width: 700px">
+
+                    <h1>Прогноз на неделю</h1>
+                    <h3 style="margin 0: auto;">Погода в городе {{ container[0][0] }}</h3>
+                    <h3 style="margin 0: auto;">Страна : {{ container[0][1] }}</h3>
+
+                    {% for i in container %}
+                    <div class="container alert alert-info">
+                        <div class="container" style="margin-left: 20px">
+                            <h4>Прогноз погоды на {{ i[5] }}</h4>
+                            <h5>Температура : {{ i[2] }}</h5>
+                            <h5>Давление : {{ i[3] }}</h5>
+                            <h5>Влажность : {{ i[4] }}</h5>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}

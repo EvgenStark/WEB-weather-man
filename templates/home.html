@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Главная</title>
+{% endblock %}
+
+{% block content %}
+<main class="container">
+    <div class="bg-light p-5 rounded">
+        <div class="container">
+            <form method="post" style="margin-top: 30px; margin: center" class="d-flex">
+                <div style="display: inline-block; float: left; width: 700px; margin-left: auto">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                           name="search">
+                </div>
+                <div style="float: left; width: 350px;">
+                    <button class="btn btn-outline-success" type="submit"
+                            style="width: 200px; background-color: #353535; color: white">
+                        Поиск
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
